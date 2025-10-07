@@ -25,5 +25,12 @@ int main()
 	assert(DBL_EPSILON > abs(to_float_hours(2, 45, 9) - 2.7525));
 	assert(DBL_EPSILON > abs(to_float_hours(1, 0, 36) - 1.01));
 
+	cout << "Test to_24_hour_clock:\n";
+	assert(DBL_EPSILON > abs(to_24_hour_clock(24) - 0));
+	assert(DBL_EPSILON > abs(to_24_hour_clock(48) - 0));
+	assert(DBL_EPSILON > abs(to_24_hour_clock(25) - 1));
+	assert(DBL_EPSILON > abs(to_24_hour_clock(4) - 4));
+	assert(DBL_EPSILON > abs(to_24_hour_clock(28.5) - 4.5));
+
 	system("pause");
 }

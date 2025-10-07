@@ -1,5 +1,6 @@
 #include "extra-task-1.h"
 #include <assert.h>
+#include <cmath>
 
 /// <summary>
 /// Разница секунд между двумя временами
@@ -91,10 +92,16 @@ double to_float_hours(int hours, int minutes, int seconds)
     */
 }
 
+/// <summary>
+/// Возращает количество часов, прошедших с полуночи.
+/// </summary>
+/// <param name="hours"></param>
+/// <returns></returns>
 double to_24_hour_clock(double hours)
 {
+    assert(hours >= 0);
+    return std::fmod(hours, 24);
 
-    return 0;
     /*
         hours is a number of hours since midnight. Return the
         hour as seen on a 24-hour clock.
