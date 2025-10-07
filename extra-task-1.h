@@ -53,6 +53,12 @@ int get_minutes(int sec);
 /// <returns></returns>
 int get_seconds(int sec);
 
+/// <summary>
+/// Возращает время в UTC+0 с учётом сдвига
+/// </summary>
+/// <param name="utc_offset"></param>
+/// <param name="time"></param>
+/// <returns></returns>
 double time_to_utc(int utc_offset, double time);
 
 double time_from_utc(int utc_offset, double time);

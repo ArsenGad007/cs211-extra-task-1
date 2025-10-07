@@ -183,10 +183,22 @@ int get_seconds(int sec)
     return (sec % 3600) % 60;
 }
 
+/// <summary>
+/// Возращает время в UTC+0 с учётом сдвига
+/// </summary>
+/// <param name="utc_offset"></param>
+/// <param name="time"></param>
+/// <returns></returns>
 double time_to_utc(int utc_offset, double time)
 {
+    assert(abs(utc_offset) <= 12);
+    int res = time - utc_offset;
+    if (res >= 24)
+        return res % 24;
+    else if (res < 0)
+        return -res;
+    return res;
 
-    return 0;
     /*
         Return time at UTC+0, where utc_offset is the number of hours away from
         UTC+0.
