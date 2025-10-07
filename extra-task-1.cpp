@@ -2,15 +2,13 @@
 #include <assert.h>
 
 /// <summary>
-/// Разница между двумя временами (сек)
+/// Разница секунд между двумя временами
 /// </summary>
 /// <param name="time_1"></param>
 /// <param name="time_2"></param>
 /// <returns></returns>
 double seconds_difference(double time_1, double time_2)
 {
-    // your implementation goes here...
-
     assert(time_1 >= 0 && time_2 >= 0);
     return time_2 - time_1;
 
@@ -32,10 +30,17 @@ double seconds_difference(double time_1, double time_2)
     */
 }
 
+/// <summary>
+/// Разница часов между двумя временам
+/// </summary>
+/// <param name="time_1"></param>
+/// <param name="time_2"></param>
+/// <returns></returns>
 double hours_difference(double time_1, double time_2)
 {
+    assert(time_1 >= 0 && time_2 >= 0);
+    return seconds_difference(time_1, time_2) / 3600;
 
-    return 0;
     /*
         Return the number of hours later that a time in seconds
         time_2 is than a time in seconds time_1.
@@ -54,10 +59,21 @@ double hours_difference(double time_1, double time_2)
     */
 }
 
+/// <summary>
+/// Возращает итоговое кол-во часов
+/// </summary>
+/// <param name="hours"></param>
+/// <param name="minutes"></param>
+/// <param name="seconds"></param>
+/// <returns></returns>
 double to_float_hours(int hours, int minutes, int seconds)
 {
+    assert(seconds >= 0 && seconds < 60);
+    assert(minutes >= 0 && minutes < 60);    
+    assert(hours >= 0);
 
-    return 0;
+    return hours + (minutes / 60.0) + (seconds / 3600.0);
+
     /*
         Return the total number of hours in the specified number
         of hours, minutes, and seconds.
