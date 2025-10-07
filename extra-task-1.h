@@ -61,4 +61,10 @@ int get_seconds(int sec);
 /// <returns></returns>
 double time_to_utc(int utc_offset, double time);
 
+/// <summary>
+/// Возращает время в UTC
+/// </summary>
+/// <param name="utc_offset"></param>
+/// <param name="time"></param>
+/// <returns></returns>
 double time_from_utc(int utc_offset, double time);

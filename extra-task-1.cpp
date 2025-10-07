@@ -191,7 +191,7 @@ int get_seconds(int sec)
 /// <returns></returns>
 double time_to_utc(int utc_offset, double time)
 {
-    assert(abs(utc_offset) <= 12);
+    assert(abs(utc_offset) <= 12 && time >= 0);
     int res = time - utc_offset;
     if (res >= 24)
         return res % 24;
@@ -225,10 +225,22 @@ double time_to_utc(int utc_offset, double time)
     */
 }
 
+/// <summary>
+/// Возращает время в UTC
+/// </summary>
+/// <param name="utc_offset"></param>
+/// <param name="time"></param>
+/// <returns></returns>
 double time_from_utc(int utc_offset, double time)
-{
+{  
+    assert(abs(utc_offset) <= 12 && time >= 0);
+    int res = time + utc_offset;
+    if (res >= 24)
+        return res % 24;
+    else if (res < 0)
+        return 24 + res;
+    return res;
 
-    return 0;
     /*
         Return UTC time in time zone utc_offset.
 
