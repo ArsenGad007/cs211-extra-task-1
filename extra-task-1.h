@@ -32,6 +32,27 @@ double to_float_hours(int hours, int minutes, int seconds);
 /// <returns></returns>
 double to_24_hour_clock(double hours);
 
+/// <summary>
+/// Определяет часовую часть
+/// </summary>
+/// <param name="h"></param>
+/// <returns></returns>
+int get_hours(int sec);
+
+/// <summary>
+/// Определяет минутную часть
+/// </summary>
+/// <param name="m"></param>
+/// <returns></returns>
+int get_minutes(int sec);
+
+/// <summary>
+/// Определяет секундную часть
+/// </summary>
+/// <param name="s"></param>
+/// <returns></returns>
+int get_seconds(int sec);
+
 double time_to_utc(int utc_offset, double time);
 
 double time_from_utc(int utc_offset, double time);

@@ -150,6 +150,39 @@ double to_24_hour_clock(double hours)
     it is currently 01:03:20 (hh:mm:ss).
 */
 
+/// <summary>
+/// Определяет часовую часть
+/// </summary>
+/// <param name="h"></param>
+/// <returns></returns>
+int get_hours(int sec) 
+{
+    assert(sec >= 0);
+    return sec / 3600;
+}
+
+/// <summary>
+/// Определяет минутную часть
+/// </summary>
+/// <param name="m"></param>
+/// <returns></returns>
+int get_minutes(int sec)
+{
+    assert(sec >= 0);
+    return (sec % 3600) / 60;
+}
+
+/// <summary>
+/// Определяет секундную часть
+/// </summary>
+/// <param name="s"></param>
+/// <returns></returns>
+int get_seconds(int sec)
+{
+    assert(sec >= 0);
+    return (sec % 3600) % 60;
+}
+
 double time_to_utc(int utc_offset, double time)
 {
 
